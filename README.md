@@ -1,6 +1,7 @@
 # Tradizion-Restaurante
 Sistema para monitoramento de estoque em um restaurante 
 # Big picture. 
+![Alt text](image-2.png)
 ## Nesta imagem está descrita a modelagem de dados no software. 
 ## A partir deste modelo faremos as funcionalidades 
 - login (Cliente/Funcionario)
