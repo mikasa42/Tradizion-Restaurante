@@ -9,4 +9,3 @@ Sistema para monitoramento de estoque em um restaurante
 - Compra (Cliente). 
 - Acompanhamento do status do pedido(Cliente). 
 - Mudança do status do pedido(Funcionario). 
-![Alt text](image-1.png)
