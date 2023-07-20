@@ -13,7 +13,7 @@ export class Produto {
     @Column()
     quantidade_produto:number
     @Column()
-    validade_produto:number /*Datetime */
+    validade_produto:Date /*Datetime */
     @Column()
     descricoes_produto:string
 
