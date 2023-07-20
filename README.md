@@ -4,10 +4,10 @@ Sistema para monitoramento de estoque em um restaurante
 ![Alt text](image-2.png)
 ## Nesta imagem está descrita a modelagem de dados no software. 
 ## A partir deste modelo faremos as funcionalidades 
-- login (Cliente e Funcionario) (CRUD).
-- Estoque para ingredientes (CRUD).
-- Pratos disponiveis (CRUD).
-- Compra (Cliente). 
+- login (Cliente e Funcionario)(CRUD).
+- Estoque para ingredientes - ingredientes (funcionario)(CRUD).
+- Pratos disponiveis - Produto(Funcionario)(CRUD).
+- Realização da Compra - pedidoPrato(Cliente)(CRUD). 
 - Acompanhamento do status do pedido(Cliente). 
 - Mudança do status do pedido(Funcionario). 
 
