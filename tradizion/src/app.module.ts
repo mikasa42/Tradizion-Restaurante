@@ -10,7 +10,7 @@ import { PedidoPratoModule } from './pedido-prato/pedido-prato.module';
 import { ClienteModule } from './cliente/cliente.module';
 import { LocalizacaoModule } from './localizacao/localizacao.module';
 import { FornecedorModule } from './fornecedor/fornecedor.module';
-import { HistoricoCompraModule } from './historico-compra/historico-compra.module';
+import { CozinheiroModule } from './cozinheiro/cozinheiro.module';
 
 @Module({
   imports: [TypeOrmModule.forRoot({
@@ -19,7 +19,7 @@ import { HistoricoCompraModule } from './historico-compra/historico-compra.modul
     entities:[],
     synchronize:true,
     autoLoadEntities:true
-  }), UserModule, FuncionarioModule, IngredientesModule, ProdutoModule, PedidoPratoModule, ClienteModule, LocalizacaoModule, FornecedorModule, HistoricoCompraModule],
+  }), UserModule, FuncionarioModule, IngredientesModule, ProdutoModule, PedidoPratoModule, ClienteModule, LocalizacaoModule, FornecedorModule, CozinheiroModule],
   controllers: [AppController],
   providers: [AppService],
 })
