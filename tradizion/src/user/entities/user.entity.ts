@@ -1,4 +1,6 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm"
+import { Cliente } from "src/cliente/entities/cliente.entity"
+import { Funcionario } from "src/funcionario/entities/funcionario.entity"
+import { Column, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn } from "typeorm"
 
 @Entity({name:'user'})
 export class User {
@@ -10,5 +12,7 @@ export class User {
     password:string
     @Column()
     createdAt:Date
+
+    
 
 }

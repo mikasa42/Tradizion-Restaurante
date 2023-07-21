@@ -1,4 +1,6 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Fornecedor } from "src/fornecedor/entities/fornecedor.entity";
+import { Funcionario } from "src/funcionario/entities/funcionario.entity";
+import { Column, Entity, JoinTable, ManyToMany, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity({name:'Ingrediente'})
 export class Ingrediente {
@@ -16,4 +18,11 @@ export class Ingrediente {
     validade:number /* Mudar campo para datetime */
     @Column()
     descricoes_ingredientes:string
+
+    @ManyToOne(() => Funcionario, (funcionario) => funcionario.ingrediente)
+    funcionario:Funcionario;
+
+    @ManyToMany(() => Fornecedor, (fornecedor)=>fornecedor.ingrediente)
+    @JoinTable()
+    fornecedor:Fornecedor
 }
