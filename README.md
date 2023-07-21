@@ -4,12 +4,12 @@ Sistema para monitoramento de estoque em um restaurante
 ![Alt text](image-4.png)
 ## Nesta imagem está descrita a modelagem de dados no software. 
 ## A partir deste modelo faremos as funcionalidades 
-- login (Cliente e Funcionario)(CRUD).
+- login (Gerente e Garçom)(CRUD).
 - Estoque para ingredientes - ingredientes (funcionario)(CRUD).
-- Pratos disponiveis - Produto(Funcionario)(CRUD).
-- Realização da Compra - pedidoPrato(Cliente)(CRUD). 
-- Acompanhamento do status do pedido(Cliente). 
-- Mudança do status do pedido(Funcionario). 
+- Pratos disponiveis - Produto(Gerente)(CRUD).
+- Realização da Compra - pedidoPrato(Garçom)(CRUD). 
+- Acompanhamento do status do pedido(Garçom). 
+- Mudança do status do pedido(Gerente). 
 
 ### Funções do CRUD : 
 - Criar.

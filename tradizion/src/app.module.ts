@@ -11,8 +11,7 @@ import { ClienteModule } from './garcom/cliente.module';
 import { LocalizacaoModule } from './localizacao/localizacao.module';
 import { FornecedorModule } from './fornecedor/fornecedor.module';
 import { CozinheiroModule } from './cozinheiro/cozinheiro.module';
-import { AuthModule } from './auth/auth.module';
-import { AuthModule } from './auth/auth.module';
+
 
 @Module({
   imports: [TypeOrmModule.forRoot({

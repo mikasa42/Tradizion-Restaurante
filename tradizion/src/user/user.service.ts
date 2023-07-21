@@ -4,16 +4,21 @@ import { UpdateUserDto } from './dto/update-user.dto';
 import { InjectRepository } from '@nestjs/typeorm';
 import { User } from './entities/user.entity';
 import { Repository } from 'typeorm';
+import * as bcrypt from 'bcrypt';
 
 @Injectable()
 export class UserService {
   constructor(@InjectRepository(User) private userRepository:Repository<User>){}
-  create(createUserDto: CreateUserDto) {
+  
+  /* Tentei usar a metodologia de criptocrafia hash mas não */
+  async create(createUserDto: CreateUserDto):Promise<User> {
+
+    const hashed_password = await this.hashPassword(createUserDto.password);
+    delete createUserDto.password;
     const  newUser = this.userRepository.create({
       ...createUserDto,
-      createdAt: new Date()
-
-    })
+      password: '${hashed_password}', /* Password recebe string então tentei passar a nova senha assim .... */
+    })/*Isto está errado mas n sei consertar */
     this.userRepository.save(newUser);
   }
 
@@ -36,4 +41,11 @@ export class UserService {
   remove(id_user: number) {
     return this.userRepository.delete({id_user});
   }
+  async hashPassword(password:string):Promise<string> {
+    const salt = await bcrypt.genSalt();
+    return bcrypt.hash(password,salt);
+    
+  }
 }
+
+
