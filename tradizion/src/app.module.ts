@@ -11,6 +11,8 @@ import { ClienteModule } from './garcom/cliente.module';
 import { LocalizacaoModule } from './localizacao/localizacao.module';
 import { FornecedorModule } from './fornecedor/fornecedor.module';
 import { CozinheiroModule } from './cozinheiro/cozinheiro.module';
+import { AuthModule } from './auth/auth.module';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [TypeOrmModule.forRoot({
@@ -19,7 +21,7 @@ import { CozinheiroModule } from './cozinheiro/cozinheiro.module';
     entities:[],
     synchronize:true,
     autoLoadEntities:true
-  }), UserModule, FuncionarioModule, IngredientesModule, ProdutoModule, PedidoPratoModule, ClienteModule, LocalizacaoModule, FornecedorModule, CozinheiroModule],
+  }), UserModule, FuncionarioModule, IngredientesModule, ProdutoModule, PedidoPratoModule, ClienteModule, LocalizacaoModule, FornecedorModule, CozinheiroModule, AuthModule],
   controllers: [AppController],
   providers: [AppService],
 })
