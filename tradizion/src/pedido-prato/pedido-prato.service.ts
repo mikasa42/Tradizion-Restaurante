@@ -1,11 +1,18 @@
 import { Injectable } from '@nestjs/common';
 import { CreatePedidoPratoDto } from './dto/create-pedido-prato.dto';
 import { UpdatePedidoPratoDto } from './dto/update-pedido-prato.dto';
+import { InjectRepository } from '@nestjs/typeorm';
+import { PedidoPrato } from './entities/pedido-prato.entity';
+import { Repository } from 'typeorm';
 
 @Injectable()
 export class PedidoPratoService {
+  constructor(@InjectRepository(PedidoPrato) private pedidoRepository:Repository<PedidoPrato>){}
   create(createPedidoPratoDto: CreatePedidoPratoDto) {
-    return 'This action adds a new pedidoPrato';
+    const newProduct = this.pedidoRepository.create({
+      ...createPedidoPratoDto,
+    })
+    this.pedidoRepository.save(newProduct)
   }
 
   findAll() {

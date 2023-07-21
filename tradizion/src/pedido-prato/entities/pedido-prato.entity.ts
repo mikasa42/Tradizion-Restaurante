@@ -11,6 +11,8 @@ export class PedidoPrato {
     data:number /*Colocar como campo datetime */
     @Column()
     status:string
+    @Column()
+    mesa:number
 
     @ManyToOne(() => Cliente, (clientes) => clientes.pedidos)
     cliente:Cliente;
