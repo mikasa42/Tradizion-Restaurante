@@ -1,5 +1,5 @@
 import { Fornecedor } from "src/fornecedor/entities/fornecedor.entity";
-import { Funcionario } from "src/funcionario/entities/funcionario.entity";
+import { Funcionario } from "src/Gerente/entities/funcionario.entity";
 import { Column, Entity, JoinTable, ManyToMany, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity({name:'Ingrediente'})
@@ -23,6 +23,6 @@ export class Ingrediente {
     funcionario:Funcionario;
 
     @ManyToMany(() => Fornecedor, (fornecedor)=>fornecedor.ingrediente)
-    @JoinTable()
+    @JoinTable({name:'id_fornecedor'})
     fornecedor:Fornecedor
 }

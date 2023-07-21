@@ -1,4 +1,5 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Fornecedor } from "src/fornecedor/entities/fornecedor.entity";
+import { Column, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity({name:'Localizacao'})
 export class Localizacao {
@@ -14,5 +15,9 @@ export class Localizacao {
     bairro:string
     @Column()
     status:string
+
+    @OneToOne(() => Fornecedor, (fornecedor)=> fornecedor.localizacao)
+    @JoinColumn()
+    fornecedor:Fornecedor
 
 }

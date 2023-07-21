@@ -14,6 +14,7 @@ export class Cliente {
     nome_cliente:string
 
     @OneToMany(() => PedidoPrato,(pedidos)=> pedidos.cliente)
+    @JoinColumn({name:'id_pedido'})
     pedidos: PedidoPrato[]
 
    

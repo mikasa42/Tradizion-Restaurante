@@ -17,6 +17,7 @@ export class Funcionario {
     nome_funcionario:string
 
     @OneToMany(() => PedidoPrato,(pedidos)=> pedidos.funcionario)
+    @JoinColumn({name:'id_pedido'})
     pedidos: PedidoPrato[]
 
     @OneToMany(() => Ingrediente,(ingrediente)=> ingrediente.funcionario)

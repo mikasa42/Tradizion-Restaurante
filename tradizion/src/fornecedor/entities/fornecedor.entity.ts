@@ -1,5 +1,6 @@
 import { Ingrediente } from "src/ingredientes/entities/ingrediente.entity";
-import { Column, Entity, JoinTable, ManyToMany, PrimaryGeneratedColumn } from "typeorm";
+import { Localizacao } from "src/localizacao/entities/localizacao.entity";
+import { Column, Entity, JoinColumn, JoinTable, ManyToMany, OneToOne, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity({name:'Fornecedor'})
 export class Fornecedor {
@@ -12,4 +13,8 @@ export class Fornecedor {
     @ManyToMany(() => Ingrediente, (ingrediente)=>ingrediente.fornecedor)
     @JoinTable()
     ingrediente:Ingrediente
+
+    @OneToOne(() => Localizacao, (localizacao) => localizacao.fornecedor)
+    @JoinColumn({name:'id_localizacao'})
+    localizacao:Localizacao
 }

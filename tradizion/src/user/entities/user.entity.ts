@@ -1,5 +1,5 @@
-import { Cliente } from "src/cliente/entities/cliente.entity"
-import { Funcionario } from "src/funcionario/entities/funcionario.entity"
+import { Cliente } from "src/garcom/entities/cliente.entity"
+import { Funcionario } from "src/Gerente/entities/funcionario.entity"
 import { Column, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn } from "typeorm"
 
 @Entity({name:'user'})
